@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  overflow: hidden;
+}
+canvas {
+  float: left;
+  margin-right: 20px;
+}
+#whole_container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  -webkit-transition: top 1s ease-in-out;
+  -moz-transition: top 1s ease-in-out;
+  -ms-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
+}
+#screen_one,
+#screen_two,
+#screen_three {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#screen_one {
+  background-color: pink;
+  background-image: url(intro.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+#screen_two {
+  background: pink;
+}
+#screen_three {
+  background: pink;
+}
+#canvas_container {
+  width: 940px;
+  height: 380px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(levels_bg.png);
+  background-repeat: no-repeat;
+}
+
+#valentines_text,
+#rewind_text,
+#replay_text {
+  font-family: "Londrina Shadow", serif;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  /* color: #000; */
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: 10px;
+
+  -webkit-transition: letter-spacing 5s ease-out;
+  -moz-transition: letter-spacing 5s ease-out;
+  -ms-transition: letter-spacing 5s ease-out;
+  transition: letter-spacing 5s ease-out;
+}
+#rewind_text,
+#replay_text {
+  font-family: "Londrina Shadow", serif;
+  color: #000;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  letter-spacing: 10px;
+  /*text-align: left;*/
+}
+#end_container {
+  width: 800px;
+  height: max-content;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 25px;
+  text-align: center;
+}
+#support {
+  font-size: 30px;
+  color: #fff;
+  background: #ff7f29;
+  padding: 10px;
+  width: 320px;
+  border-radius: 10px;
+  margin: 10px auto;
+  cursor: pointer;
+
+  position: relative;
+  top: 0px;
+
+  text-decoration: none;
+
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+#support:hover {
+  background: #ffce87;
+  top: -3px;
+}
+input#your_message {
+  display: block;
+  width: 100%;
+  font-size: 30px;
+  padding: 5px;
+  border: 2px solid #ddd;
+  margin: 5px 0 40px 0;
+
+  color: #666;
+  padding-top: 8px;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
+
+  text-align: center;
+}
+input#your_link {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  padding: 5px;
+  background: #ddd;
+  border: none;
+  margin: 5px 0 40px 0;
+
+  color: #666;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
+
+  text-align: center;
+}
+#share {
+  width: 330px;
+  margin: 5px auto;
+  height: 50px;
+  margin-bottom: 30px;
+}
+#share > div {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+
+  opacity: 0.25;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+#share > div:hover {
+  opacity: 0.7;
+  top: -3px;
+}
+
+#bottom {
+  font-size: 17px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #999;
+}
+#bottom a {
+  color: #aaa;
+}
+#bottom a:hover {
+  color: #ccc;
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: #333;
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-align: center;
+
+  z-index: 1;
+}
+#loading > div {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+/* screen three */
+
+#screen_three {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+#end_container {
+  max-width: 800px;
+  /* padding: 50px; */
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#end_container span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+}
+
+input#your_message {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ff6f61;
+  border-radius: 12px;
+  font-size: 20px;
+  margin: 20px 0;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
+input#your_link {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: #eee;
+  font-size: 18px;
+  text-align: center;
+  color: #666;
+  font-weight: bold;
+  cursor: not-allowed;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+#share {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#share > div {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#share > div:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#support {
+  font-size: 22px;
+  padding: 15px auto;
+  border-radius: 10px;
+  background: #ff6f61;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin: 20px auto 0 auto;
+}
+
+#support:hover {
+  background: #f7b42c;
+  transform: translateY(-5px);
+}
+
+#bottom {
+  font-size: 18px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #555;
+}
+
+#bottom a {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#bottom a:hover {
+  color: #f7b42c;
+  text-decoration: underline;
+}
