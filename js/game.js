@@ -695,7 +695,7 @@ function iHeartYou() {
   }, 10);
 
   // After 9 seconds, swipe down to CREDITS.
-  // No replay. Fuck it.
+  // No replay..
   setTimeout(function () {
     document.getElementById("whole_container").style.top = "-200%";
   }, 7300);
@@ -748,10 +748,10 @@ var yourMessage = document.getElementById("your_message");
 var yourLink = document.getElementById("your_link");
 function linkChangey() {
   if (yourMessage.value == "") {
-    yourLink.value = "http://ncase.me/door/";
+    yourLink.value = "https://adoorable.vercel.app/";
   } else {
     yourLink.value =
-      "http://ncase.me/door/#" +
+      "https://adoorable.vercel.app/#" +
       encodeURIComponent(encryptString(yourMessage.value));
   }
 }
@@ -776,7 +776,7 @@ function socialShare(event, type) {
       url +=
         "&t=" +
         encodeURIComponent(
-          "A lovely message for all my dear friends. This minigame only takes a minute to play, check it out! it's a(door)able --"
+          "A lovely message for all my dear love."
         );
       width = 626;
       height = 436;
@@ -786,7 +786,7 @@ function socialShare(event, type) {
       url +=
         "&text=" +
         encodeURIComponent(
-          "A lovely message for all my dear followers, in this 1-min minigame. http://pic.twitter.com/DK5vnPzEVn"
+          "A lovely message for all my dear love"
         ); // add twitter pic.
       url += "&via=ncasenmare";
       width = 640;
@@ -804,7 +804,7 @@ function socialShare(event, type) {
       url +=
         "&description=" +
         encodeURIComponent(
-          "A lovely message for all my dear followers, in this 1-min minigame."
+          "A lovely message for all my dear love."
         );
       width = 446;
       height = 430;
